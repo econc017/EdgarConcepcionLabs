@@ -46,7 +46,7 @@ class StopwatchController:
         # Instantiate a Model. Needs to have the number of states, self as the handler
         # You can also say debug=True to see some of the transitions on the screen
         # Here is a sample for a model with 4 states
-        self._model = Model(4, self, debug=True)
+        self._model = Model(3, self, debug=True)
         
         # Up to 4 buttons and a timer can be added to the model for use in transitions
         # Buttons must be added in the sequence you want them used. The first button
@@ -81,7 +81,7 @@ class StopwatchController:
         # and then call the model's run method.
         # You can send a delay as a parameter if you want something other
         # than the default 0.1s. e.g.,  self._model.run(0.25)
-        self._model.run(0.25)
+        self._model.run(0.1)
 
     """
     stateDo - the method that handles the do/actions for each state

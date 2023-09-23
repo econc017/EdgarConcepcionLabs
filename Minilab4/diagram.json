@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "author": "Edgar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": -75.33,
+      "left": 12.67,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -116.13,
+      "left": -164.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -67.16,
+      "left": -87.73,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -9.84,
+      "left": -138.9,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 70.07,
+      "left": -141.07,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -169.92,
+      "left": 154.73,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": 56.04,
+      "left": 127.85,
+      "attrs": { "pixels": "16" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 143.48, "left": -217.59, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -14.7, "left": 323.9, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": 255.64, "left": 142.85, "attrs": {} }
+  ],
+  "connections": [
+    [ "r1:2", "pico:GP0", "red", [ "v0" ] ],
+    [ "r1:1", "led1:A", "red", [ "v0" ] ],
+    [ "led1:C", "gnd1:GND", "black", [ "v22.37", "h-64.91" ] ],
+    [ "btn1:1.r", "pico:GP10", "red", [ "v0.99", "h68.3", "v69.36" ] ],
+    [ "btn2:1.r", "pico:GP12", "red", [ "v0" ] ],
+    [ "btn1:2.r", "gnd1:GND", "black", [ "h-2.47", "v38.62", "h-127.4" ] ],
+    [ "btn2:2.r", "gnd1:GND", "black", [ "h-5.26", "v37.97" ] ],
+    [ "pir1:VCC", "pico:3V3", "red", [ "v0" ] ],
+    [ "pir1:GND", "gnd2:GND", "black", [ "v0" ] ],
+    [ "pir1:OUT", "pico:GP28", "green", [ "v0" ] ],
+    [ "ring1:GND", "gnd3:GND", "black", [ "v0" ] ],
+    [ "ring1:VCC", "pico:3V3", "red", [ "v8.38", "h-95.13", "v-240.3" ] ],
+    [ "ring1:DIN", "pico:GP17", "green", [ "v28.4", "h-93.88", "v-147.69" ] ]
+  ],
+  "dependencies": {}
+}

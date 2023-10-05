@@ -1,0 +1,14 @@
+{
+  "Ad_List": [
+    {
+      "Ad_Text": "Best company ever",
+      "Time_s": 15,
+      "Price": 1.5
+    },
+    {
+      "Ad_Text": "Another best company ever",
+      "Time_s": 10,
+      "Price": 1
+    }
+  ]
+}

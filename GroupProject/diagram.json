@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "author": "Edgar",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-pi-pico-w",
+      "id": "pico",
+      "top": -75.33,
+      "left": 12.67,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": -32.2,
+      "left": -105.6,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 159.8,
+      "left": -105.6,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": 56.04,
+      "left": 127.85,
+      "attrs": { "pixels": "16" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 230.4, "left": -29.4, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": 255.64, "left": 142.85, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -224,
+      "left": 111.2,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -192, "left": -48.6, "attrs": {} },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 63.8,
+      "left": -124.8,
+      "attrs": { "color": "white" }
+    }
+  ],
+  "connections": [
+    [ "btn1:2.r", "gnd1:GND", "black", [ "h-2.47", "v38.62", "h-127.4" ] ],
+    [ "btn2:2.r", "gnd1:GND", "black", [ "h-5.26", "v37.97" ] ],
+    [ "ring1:GND", "gnd3:GND", "black", [ "v0" ] ],
+    [ "ring1:VCC", "pico:3V3", "red", [ "v8.38", "h-95.13", "v-240.3" ] ],
+    [ "ring1:DIN", "pico:GP17", "green", [ "v28.4", "h-93.88", "v-147.69" ] ],
+    [ "lcd1:GND", "gnd2:GND", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "pico:VBUS", "#8f4814", [ "h-9.6", "v115.3" ] ],
+    [ "lcd1:SDA", "pico:GP0", "red", [ "h0" ] ],
+    [ "lcd1:SCL", "pico:GP1", "green", [ "h-105.6", "v115.5" ] ],
+    [ "pico:GP12", "btn2:1.r", "red", [ "h-18.72", "v110.52" ] ],
+    [ "btn3:1.r", "pico:GP11", "red", [ "v0" ] ],
+    [ "btn3:2.r", "gnd1:GND", "black", [ "h0" ] ],
+    [ "btn1:1.r", "pico:GP10", "red", [ "v86.4", "h9.8" ] ]
+  ],
+  "dependencies": {}
+}
